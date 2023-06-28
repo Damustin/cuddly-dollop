@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { FaTimesCircle } from 'react-icons/fa';
+import { FaPlusCircle } from 'react-icons/fa';
 const ExpenseItem = (props) => {
     const { dispatch, Location} = useContext(AppContext);
     const handleDeleteItem = () => {
@@ -19,6 +20,7 @@ const ExpenseItem = (props) => {
         <td>{Location}{parseInt(props.unitprice)}</td>
         <td>{Location}{parseInt(props.quantity)*parseInt(props.unitprice)}</td>
         <td><FaTimesCircle size='2.2em' color="red" onClick={handleDeleteItem}></FaTimesCircle></td>
+        <td><FaPlusCircle size='2.2em' color="green" onClick=""></FaPlusCircle></td>
         </tr>
     );
 };
