@@ -5,6 +5,7 @@ import CartValue from './components/CartValue';
 import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
 import Location from './components/Location';
+import PresupuestoForm from './components/CartPresupuesto';
 
 
 const App = () => {
@@ -13,6 +14,9 @@ const App = () => {
             <div className='container'>
                 <h1 className='mt-3'>Shopping App</h1>
                 <div className='row mt-3'> 
+                <div className='col-sm'>
+                        <PresupuestoForm/>
+                    </div>
                    <div className='col-sm'>
                         <CartValue />
                     </div>

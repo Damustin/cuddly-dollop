@@ -51,6 +51,12 @@ export const AppReducer = (state, action) => {
             return {
                 ...state
             }
+            case 'SET_PRESUPUESTO':
+                return {
+                  ...state,
+                  presupuesto: action.payload,
+                };
+                  
         default:
             return state;
     }
@@ -64,7 +70,8 @@ const initialState = {
         { id: "Dinner set", name: 'Dinner set', quantity: 0, unitprice: 600 },
         { id: "Bags", name: 'Bags', quantity: 0, unitprice: 200 },
     ],
-    Location: '£'
+    Location: '£',
+    presupuesto: 0, // Agrega la variable presupuesto al estado inicial
 };
 // 2. Creates the context this is the thing our components import and use to get the state
 export const AppContext = createContext();
