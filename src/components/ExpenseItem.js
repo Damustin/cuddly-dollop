@@ -4,7 +4,7 @@ import { FaTimesCircle, FaPlusCircle, FaShoppingBasket } from 'react-icons/fa';
 
 
 const ExpenseItem = (props) => {
-    const { dispatch, Location } = useContext(AppContext);
+    const { dispatch, moneda } = useContext(AppContext);
 
     const handleDeleteItem = () => {
         const item = {
@@ -50,8 +50,8 @@ const ExpenseItem = (props) => {
         <tr>
             <td>{props.name}</td>
             <td>{props.quantity}</td>
-            <td>{Location}{parseInt(props.unitprice)}</td>
-            <td>{Location}{parseInt(props.quantity) * parseInt(props.unitprice)}</td>
+            <td>{moneda}{parseInt(props.unitprice)}</td>
+            <td>{moneda}{parseInt(props.quantity) * parseInt(props.unitprice)}</td>
             <td><FaTimesCircle size='2.2em' color="red" onClick={handleRestItem}></FaTimesCircle></td>
             <td><FaPlusCircle size='2.2em' color="green" onClick={handleAddItem}></FaPlusCircle></td>
             <td><FaShoppingBasket size="2.2em" color="grey" onClick={handleDeleteItem}></FaShoppingBasket></td>

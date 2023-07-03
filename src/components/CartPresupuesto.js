@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const PresupuestoForm = () => {
-  const { dispatch,Location } = useContext(AppContext);
+  const { dispatch,Location,moneda } = useContext(AppContext);
   const [presupuestoValue, setPresupuestoValue] = useState('');
 
   const handlePresupuestoSubmit = (e) => {
@@ -36,7 +36,7 @@ const PresupuestoForm = () => {
     <div className='alert alert-success'>
       <form onSubmit={handlePresupuestoSubmit}>
         <label htmlFor="presupuesto">Presupuesto:</label>
-        <span  style={{ marginLeft: '2rem', marginRight: '8px' }}>{Location}</span>
+        <span  style={{ marginLeft: '2rem', marginRight: '8px' }}>{moneda}</span>
         <input
           type="number"
           id="presupuesto"
@@ -44,7 +44,8 @@ const PresupuestoForm = () => {
           onChange={handleValueChange}
           required
         />
-        <button className="btn btn-primary" type="submit">Guardar</button>
+        <button className="btn btn-primary" type="submi
+        t">Guardar</button>
       </form>
       {presupuestoValue > 20000 && (
         <div className='alert alert-danger mt-3' role='alert'>

@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useState } from 'react';
 
 export const AppReducer = (state, action) => {
   let newExpenses = [];
@@ -49,6 +49,11 @@ export const AppReducer = (state, action) => {
         ...state,
         presupuesto: action.payload,
       };
+    case 'SET_MONEDA':
+      return {
+        ...state,
+        moneda: action.payload,
+      };
     default:
       return state;
   }
@@ -64,6 +69,7 @@ const initialState = {
   ],
   Location: '£',
   presupuesto: 0,
+  moneda: '$',
 };
 
 export const AppContext = createContext();
@@ -79,12 +85,13 @@ export const AppProvider = (props) => {
   }
 
   return (
-    <AppContext.Provider
+<AppContext.Provider
       value={{
         expenses: state.expenses,
         CartValue: totalExpenses,
         dispatch,
-        Location: state.Location,
+        moneda: state.moneda, // Agrega la propiedad 'moneda' al valor del contexto
+        setMoneda: (value) => dispatch({ type: 'SET_MONEDA', payload: value }), // Agrega la función 'setMoneda' al valor del contexto
         presupuesto: state.presupuesto,
       }}
     >
