@@ -6,6 +6,8 @@ import ExpenseList from './components/ExpenseList';
 import ItemSelected from './components/ItemSelected';
 import Location from './components/Location';
 import PresupuestoForm from './components/CartPresupuesto';
+import CartCurrency from './components/CartCurrency';
+
 
 
 const App = () => {
@@ -22,6 +24,9 @@ const App = () => {
                     </div>
                     <div className='col-sm'>
                         <Location />
+                    </div>
+                    <div className='col-sm'>
+                        <CartCurrency />
                     </div>
                 </div>
                 <h3 className='mt-3'>Shopping Cart</h3>
